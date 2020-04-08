@@ -15,9 +15,11 @@
     "express-graphql": "^0.9.0",
     "graphql": "^15.0.0",
     "graphql-playground-middleware-express": "^1.7.12",
-    "jest": "^25.2.7",
     "mongodb": "^3.5.5",
-    "mongodb-memory-server": "^6.5.2",
+    "mongodb-memory-server": "^6.5.2"
+  },
+  "devDependencies": {
+    "jest": "^25.2.7",
     "supertest": "^4.0.2"
   }
 }
