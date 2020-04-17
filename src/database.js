@@ -4,11 +4,12 @@ const data = require("./data");
 
 let database = null;
 
+const mongo = new MongoMemoryServer();
+
 async function startDatabase() {
-  const mongo = new MongoMemoryServer();
   const mongoDBURL = await mongo.getConnectionString();
   const connection = await MongoClient.connect(mongoDBURL, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
   });
 
   //Seed Database
@@ -20,4 +21,11 @@ async function startDatabase() {
   return database;
 }
 
-module.exports = startDatabase;
+async function stopDatabase() {
+  await mongo.stop();
+}
+
+module.exports = {
+  startDatabase,
+  stopDatabase,
+};

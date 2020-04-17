@@ -2,7 +2,7 @@ const express = require("express");
 const graphqlHTTP = require("express-graphql");
 const schema = require("./schema");
 const resolvers = require("./resolvers");
-const startDatabase = require("./database");
+const { startDatabase } = require("./database");
 const expressPlayground = require("graphql-playground-middleware-express")
   .default;
 
